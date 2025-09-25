@@ -5,78 +5,44 @@
 
 /* ====================== CELULARES ====================== */
 @media screen and (max-width: 600px) {
-    * {
-        padding: 5px;
-        margin: 0;
-    }
-
     .container {
         flex-direction: column;
         max-width: 95%;
-        height: auto;
         gap: 15px;
         align-items: center;
+        height: auto;
+        /* garante que o gradiente cubra tudo */
     }
 
     .infos,
     .formulario {
-        max-width: 90%;
-    }
-
-    .infos p img {
-        width: 20px;
-    }
-
-    form {
-        gap: 1em;
+        max-width: 100%;
     }
 
     footer {
-        width: 100%;
-        margin-top: 15px;
-        text-align: center;
-        padding: 8px;
-    }
-
-    header h1,
-    h2 {
-        font-size: 1.2em;
+        margin-top: 20px;
+        padding: 12px;
     }
 }
 
-/* ====================== TABLETS ====================== */
+/* TABLETS */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
     .container {
         flex-direction: column;
         max-width: 90%;
-        height: auto;
         gap: 12px;
-        align-items: center;
+        height: auto;
     }
+}
 
-    .infos,
-    .formulario {
+/* DESKTOPS */
+@media screen and (min-width: 1025px) {
+    .container {
+        flex-direction: row;
         max-width: 80%;
-    }
-
-    .infos p img {
-        width: 25px;
-    }
-
-    form {
-        gap: 1.5em;
-    }
-
-    footer {
-        width: 100%;
-        margin-top: 20px;
-        text-align: center;
-        padding: 10px;
-    }
-
-    header h1,
-    h2 {
-        font-size: 1.5em;
+        gap: 20px;
+        height: auto;
+        /* mesmo no desktop */
     }
 }
 
@@ -148,7 +114,7 @@ body {
     align-items: center;
     background-image: linear-gradient(to bottom, #e2a085, #ee6825, #9c350c);
     border-radius: 24px;
-    height: 500px;
+    height: auto;
     box-shadow: 5px 5px 10px #77270881;
 
 }
