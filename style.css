@@ -4,96 +4,95 @@
 /* --------- RESPONSIVIDADE --------- */
 
 /* ====================== CELULARES ====================== */
+/* ====================== CELULARES ====================== */
 @media screen and (max-width: 600px) {
     .container {
         display: flex;
         flex-direction: column;
         width: 100vw;
-        max-width: 100vw;
-        gap: 15px;
-        align-items: stretch;
-        padding: 16px;
+        /* ocupa toda a largura da tela */
         min-height: 100vh;
+        /* altura mínima da tela */
+        gap: 15px;
+        padding: 16px;
+        align-items: stretch;
         background-image: none;
-        background-repeat: no-repeat;
+        /* remove o gradiente */
         border-radius: 24px;
         box-shadow: 5px 5px 10px #77270881;
         box-sizing: border-box;
+    }
 
+    .infos,
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        /* todos os elementos em coluna */
+        width: 100%;
+        max-width: 100%;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+    .infos p {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 4px 0;
+        word-wrap: break-word;
     }
 
     .formulario textarea {
         width: 100%;
-        /* ocupa toda a largura disponível do container */
         max-width: 100%;
-        /* evita que ultrapasse o container */
         box-sizing: border-box;
-        /* inclui padding e borda na largura */
+        resize: vertical;
+        /* permite apenas ajuste vertical */
+    }
+
+    .pix {
+        background-color: #c24818c0;
+        border: 1px solid #9c350c91;
+        box-shadow: 5px 5px 4px #77270881;
+        border-radius: 24px;
+        padding: 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        text-align: center;
+        transition: transform 0.6s ease;
+    }
+
+    footer {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+        text-align: center;
     }
 }
 
-.pix {
-    background-color: #c24818c0;
-    border: 1px solid #9c350c91;
-    box-shadow: 5px 5px 4px #77270881;
-    border-radius: 24px;
-    padding: 16px;
-    /* aumenta a altura e largura do fundo */
-    width: 100%;
-    /* ocupa a largura do container */
-    max-width: 100%;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    /* evita que o texto saia do fundo */
-    transition: transform 0.6s ease;
-}
-
-.infos,
-.formulario {
-    max-width: 100%;
-    width: 100%;
-}
-
-/* aqui faz os <p> da infos ficarem lado a lado */
-.infos {
-    display: flex;
-    flex-wrap: wrap;
-    /* quebra linha se faltar espaço */
-    gap: 8px;
-    flex-direction: row;
-}
-
-.infos p {
-    flex: 1 1 auto;
-    /* ajusta largura automaticamente */
-    text-align: center;
-}
-
-footer {
-    margin-top: 20px;
-    padding: 12px;
-}
-}
-
-/* TABLETS */
+/* ====================== TABLETS ====================== */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
     .container {
+        display: flex;
         flex-direction: column;
-        max-width: 90%;
+        width: 90%;
         gap: 12px;
         height: auto;
+        align-items: center;
+        padding: 16px;
+        box-sizing: border-box;
     }
-}
 
-/* DESKTOPS */
-@media screen and (min-width: 1025px) {
-    .container {
-        display: flex;
-        flex-direction: row;
-        max-width: 80%;
-        gap: 20px;
-        height: auto;
-        /* mesmo no desktop */
+    .infos,
+    .formulario {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .pix {
+        width: 100%;
     }
 }
 
