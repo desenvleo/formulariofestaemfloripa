@@ -29,14 +29,16 @@
             </section>
             <section class="formulario">
                 <div class="divform">
-                    <form id="meuForm" enctype="multipart/form-data">
+                    <form id="meuForm" enctype="multipart/form-data"
+                        action="https://script.google.com/macros/s/AKfycbwW_cIY_6XtBfBMmMrpYu3GwOiLA924Oje69fP3NgaR04YawyQDscXY3QJ2n1mWgk1Efw/exec"
+                        onsubmit="return enviarForm(this)">
                         <label for="nomes">Envie no máximo 12 nomes por formulário: <textarea name="caixanomes"
                                 id="caixanomes" cols="50" rows="10"></textarea></label>
                         <label for="email">E-mail(s) correspondentes: <textarea name="emails" id="" cols="20"
                                 rows="5"></textarea></label>
                         <label for="arquivo" class="labelwrapper">Comprovante(s): <input class="file" type="file"
                                 name="comprovante" id="caixacomprov"> <button id="comprovante"
-                                type="button">Enviar</button></label>
+                                type="submit">Enviar</button></label>
 
                     </form>
                 </div>
@@ -58,44 +60,26 @@
             a.addEventListener('touchcancel', () => a.classList.remove('touch'));
         });
 
-        document.getElementById('comprovante').addEventListener('click', function (e) {
-            e.preventDefault(); // previne comportamento padrão
-            const formData = new FormData(document.querySelector('form'));
-            fetch('https://script.google.com/macros/s/AKfycbx5KgkvZ_LqBC14u8V_oMQCvyfZ4rAXagvYdmkfRWn_cZ8RuJK_4RQbqzSSQO0uxNRHlg/exec', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(err => console.error(err));
-        });
-        function comprovar() {
-            const form = document.querySelector('#meuForm');
-            const formData = new FormData(form);
 
-            fetch('URL_DO_SEU_WEB_APP', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.result === "success") {
-                        alert("Formulário enviado com sucesso!");
-                        form.reset();
-                    } else {
-                        alert("Erro ao enviar: " + data.message);
-                    }
-                })
-                .catch(err => {
-                    console.error("Erro ao enviar:", err);
-                    alert("Erro ao enviar o formulário. Veja o console.");
-                });
+        // Função chamada quando o formulário é enviado
+        function enviarForm(form) {
+            // Exibe alerta de sucesso
+            alert("Formulário enviado com sucesso!");
+
+            // Limpa os campos do formulário após um pequeno atraso
+            setTimeout(() => form.reset(), 100);
+
+            // Retorna true para permitir o envio normal do form para o Apps Script
+            return true;
         }
 
-        document.getElementById('comprovante').addEventListener('click', function (e) {
-            e.preventDefault();
-            comprovar();
+        // Footer: efeito touch nos links (mantendo seu código)
+        document.querySelectorAll('.footer a').forEach(a => {
+            a.addEventListener('touchstart', () => a.classList.add('touch'));
+            a.addEventListener('touchend', () => a.classList.remove('touch'));
+            a.addEventListener('touchcancel', () => a.classList.remove('touch'));
         });
+
 
 
     </script>
