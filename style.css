@@ -14,8 +14,7 @@
         align-items: stretch;
         padding: 16px;
         min-height: 100vh;
-        background-image: linear-gradient(to bottom, #e2a085, #ee6825, #9c350c);
-        background-size: cover;
+        background-image: none;
         background-repeat: no-repeat;
         border-radius: 24px;
         box-shadow: 5px 5px 10px #77270881;
