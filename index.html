@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSCRIÇÃO</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -32,10 +32,11 @@
                     <form action="#">
                         <label for="nomes">Envie no máximo 12 nomes por formulário: <textarea name="caixanomes"
                                 id="caixanomes" cols="50" rows="10"></textarea></label>
-                        <label for="email">E-mail(s) correspondentes: <textarea name="" id="" cols="20"
+                        <label for="email">E-mail(s) correspondentes: <textarea name="Emails" id="" cols="20"
                                 rows="5"></textarea></label>
-                        <label for="arquivo" class="labelwrapper">Comprovante(s): <input class="file" type="file" name="comprovante"
-                                id="caixacomprov"> <button id="comprovante">Enviar</button></label>
+                        <label for="arquivo" class="labelwrapper">Comprovante(s): <input class="file" type="file"
+                                name="comprovante" id="caixacomprov"> <button id="comprovante"
+                                type="button">Enviar</button></label>
 
                     </form>
                 </div>
@@ -57,6 +58,17 @@
             a.addEventListener('touchcancel', () => a.classList.remove('touch'));
         });
 
+        document.getElementById('comprovante').addEventListener('click', function (e) {
+            e.preventDefault(); // previne comportamento padrão
+            const formData = new FormData(document.querySelector('form'));
+            fetch('https://script.google.com/macros/s/AKfycbx5KgkvZ_LqBC14u8V_oMQCvyfZ4rAXagvYdmkfRWn_cZ8RuJK_4RQbqzSSQO0uxNRHlg/exec', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(err => console.error(err));
+        });
 
     </script>
 
