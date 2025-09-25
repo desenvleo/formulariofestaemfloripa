@@ -1,0 +1,337 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* --------- RESPONSIVIDADE --------- */
+
+/* ====================== CELULARES ====================== */
+@media screen and (max-width: 600px) {
+    * {
+        padding: 5px;
+        margin: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        max-width: 95%;
+        height: auto;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .infos,
+    .formulario {
+        max-width: 90%;
+    }
+
+    .infos p img {
+        width: 20px;
+    }
+
+    form {
+        gap: 1em;
+    }
+
+    footer {
+        width: 100%;
+        margin-top: 15px;
+        text-align: center;
+        padding: 8px;
+    }
+
+    header h1,
+    h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* ====================== TABLETS ====================== */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        max-width: 90%;
+        height: auto;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .infos,
+    .formulario {
+        max-width: 80%;
+    }
+
+    .infos p img {
+        width: 25px;
+    }
+
+    form {
+        gap: 1.5em;
+    }
+
+    footer {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header h1,
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* ====================== DESKTOPS PEQUENOS ====================== */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .container {
+        flex-direction: row;
+        max-width: 80%;
+        height: 500px;
+        gap: 10px;
+    }
+
+    .infos,
+    .formulario {
+        max-width: 40%;
+    }
+
+    .infos p img {
+        width: 30px;
+    }
+
+    form {
+        gap: 2em;
+    }
+
+    footer {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header h1,
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* ====================== DESKTOPS GRANDES ====================== */
+@media screen and (min-width: 1441px) {
+    .container {
+        max-width: 60%;
+    }
+}
+
+* {
+    margin: auto;
+    padding: 10px;
+
+}
+
+body {
+    background-color: #83290675;
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+
+}
+
+:root {
+    --cor1: #ee6825;
+    --cor2: #9c350c;
+    --cor3: #e2a085;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    max-width: 80%;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #e2a085, #ee6825, #9c350c);
+    border-radius: 24px;
+    height: 500px;
+    box-shadow: 5px 5px 10px #77270881;
+
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+
+}
+
+header h1 {
+    color: #9c350c;
+    font-style: italic;
+    font-weight: 500;
+}
+
+header h2 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1em;
+    color: #521c07;
+}
+
+header h1,
+h2 {
+    text-align: center;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.3em;
+
+
+}
+
+.formulario {
+    display: flex;
+
+}
+
+.formulario input {
+    background-color: transparent;
+    border-radius: 12px;
+    border: 1px solid #9c350c;
+    box-shadow: 5px 5px 8px #77270881;
+}
+
+#caixacomprov {
+    border: none;
+}
+
+.formulario textarea {
+    background-color: transparent;
+    border-radius: 16px;
+    border: 2px solid #9c350c91;
+    box-shadow: 5px 5px 8px #77270881;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-weight: 600;
+}
+
+.infos {
+    max-width: 45%;
+}
+
+.infos h3 {
+    font-style: italic;
+    color: #9c350c;
+}
+
+.valor {
+    font-weight: 400;
+}
+
+.pix {
+    font-weight: 500;
+}
+
+.infos p img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 2px;
+
+}
+
+.infos>* {
+    margin-bottom: 24px;
+}
+
+.formulario {
+    max-width: 45%;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 10px 0px 10px;
+}
+
+.pix {
+    background-color: #c24818c0;
+    border: 1px solid #9c350c91;
+    box-shadow: 5px 5px 4px #77270881;
+    border-radius: 24px;
+    transition: transform 0.6s ease;
+}
+
+.pix:hover {
+    transform: scale(1.14);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    color: #aa3d07c9;
+    font-size: 16px;
+    gap: 1px;
+
+}
+
+.footer a {
+    display: inline-block;
+    background-color: #9c350cb9;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.733);
+    border-radius: 12px;
+    padding: 8px;
+    opacity: .8;
+    transition: transform 0.6s ease;
+    margin-left: 8px;
+}
+
+.footer a:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.footer p img {
+    vertical-align: middle;
+    margin-left: 1px;
+}
+
+.labelwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.labelwrapper button {
+    padding: 4px 32px 4px 32px;
+    background-color: #9c350cb9;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    opacity: .8;
+    color: rgba(255, 255, 255, 0.733);
+
+}
+
+.labelwrapper button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    cursor: pointer;
+}
