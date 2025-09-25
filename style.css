@@ -10,6 +10,7 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
+        max-width: 1200px;
         /* ocupa toda a largura da tela */
         min-height: 100vh;
         /* altura mínima da tela */
@@ -44,10 +45,10 @@
 
     .formulario textarea {
         width: 100%;
-        max-width: 100%;
         box-sizing: border-box;
         resize: vertical;
         /* permite apenas ajuste vertical */
+        max-width: 50%;
     }
 
     .pix {
@@ -59,7 +60,6 @@
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        word-wrap: break-word;
         text-align: center;
         transition: transform 0.6s ease;
     }
@@ -161,13 +161,28 @@ body {
 .container {
     display: flex;
     gap: 10px;
-    max-width: 80%;
+    width: 100%;
+    max-width: 1200px;
     align-items: center;
     background-image: linear-gradient(to bottom, #e2a085, #ee6825, #9c350c);
     border-radius: 24px;
     height: auto;
     box-shadow: 5px 5px 10px #77270881;
 
+}
+
+.infos,
+.formulario {
+    flex: 1 1 0;
+    /* cada section cresce proporcionalmente */
+    max-width: 50%;
+    /* não ultrapassa metade do container */
+    box-sizing: border-box;
+}
+
+.formulario textarea {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
