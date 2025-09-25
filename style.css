@@ -17,13 +17,17 @@
         background-image: linear-gradient(to bottom, #e2a085, #ee6825, #9c350c);
         /* cobre tudo */
         background-size: cover;
+        
         /* garante que pegue toda a altura */
         background-repeat: no-repeat;
+        width: 100%;
+        align-items: stretch;
     }
 
     .infos,
     .formulario {
         max-width: 100%;
+        width: 100%;
     }
 
     /* aqui faz os <p> da infos ficarem lado a lado */
@@ -32,6 +36,7 @@
         flex-wrap: wrap;
         /* quebra linha se faltar espaço */
         gap: 8px;
+        flex-direction: row;
     }
 
     .infos p {
