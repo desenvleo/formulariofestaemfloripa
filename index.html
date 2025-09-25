@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSCRIÇÃO</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>ROLEZINHO D48 - FUNK, MEGAFUNK E MANDELÃO</h1>
+            <h2>Preencha os campos abaixo e garanta sua presença!</h2>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <section class="infos">
+                <h3>BENEFÍCIOS E INFORMAÇÕES</h3>
+                <p>A cada 4 ingressos comprados são liberadas 2 cortesias! <img src="./imagem/ticket.png"
+                        alt="imgingresso"><br>Basta enviar os nomes e
+                    e-mails, especificando quem são os ganhadores!</p>
+                <p class="valor"><img src="./imagem/ticket.png" alt="imgingresso">1 ingresso - R$30,00<br><img
+                        src="./imagem/ticket.png" alt="imgingresso">4 ingressos - R$100,00</p>
+                <p class="pix">Chave Pix: leonardodemouraveiga@gmail.com <br>(NU PAGAMENTOS)</p>
+
+            </section>
+            <section class="formulario">
+                <div class="divform">
+                    <form action="#">
+                        <label for="nomes">Envie no máximo 12 nomes por formulário: <textarea name="caixanomes"
+                                id="caixanomes" cols="50" rows="10"></textarea></label>
+                        <label for="email">E-mail(s) correspondentes: <textarea name="" id="" cols="20"
+                                rows="5"></textarea></label>
+                        <label for="arquivo" class="labelwrapper">Comprovante(s): <input class="file" type="file" name="comprovante"
+                                id="caixacomprov"> <button id="comprovante">Enviar</button></label>
+
+                    </form>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="footer">
+        <h4>Design criado por Leonnardo de Moura - Desenvolvedor</h4>
+        <p>Entre em contato: <a target="_blank" href="https://wa.me/5548991286349">Chamar promoter <img
+                    src="./imagem/whatsssss.png" alt=""></a></p>
+        <p>LOCAL DO EVENTO: STAGE MUSIC PARK - FLORIANÓPOLIS, SANTA CATARINA</p>
+    </footer>
+
+    <script>
+
+        document.querySelectorAll('.footer a').forEach(a => {
+            a.addEventListener('touchstart', () => a.classList.add('touch'));
+            a.addEventListener('touchend', () => a.classList.remove('touch'));
+            a.addEventListener('touchcancel', () => a.classList.remove('touch'));
+        });
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
