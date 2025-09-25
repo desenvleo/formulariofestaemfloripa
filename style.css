@@ -48,6 +48,7 @@
         width: 100%;
         box-sizing: border-box;
         resize: vertical;
+        align-items: flex-start;
         /* permite apenas ajuste vertical */
         max-width: 50%;
     }
