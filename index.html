@@ -29,10 +29,10 @@
             </section>
             <section class="formulario">
                 <div class="divform">
-                    <form action="#">
+                    <form id="meuForm" enctype="multipart/form-data">
                         <label for="nomes">Envie no máximo 12 nomes por formulário: <textarea name="caixanomes"
                                 id="caixanomes" cols="50" rows="10"></textarea></label>
-                        <label for="email">E-mail(s) correspondentes: <textarea name="Emails" id="" cols="20"
+                        <label for="email">E-mail(s) correspondentes: <textarea name="emails" id="" cols="20"
                                 rows="5"></textarea></label>
                         <label for="arquivo" class="labelwrapper">Comprovante(s): <input class="file" type="file"
                                 name="comprovante" id="caixacomprov"> <button id="comprovante"
@@ -69,6 +69,34 @@
                 .then(data => console.log(data))
                 .catch(err => console.error(err));
         });
+        function comprovar() {
+            const form = document.querySelector('#meuForm');
+            const formData = new FormData(form);
+
+            fetch('URL_DO_SEU_WEB_APP', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === "success") {
+                        alert("Formulário enviado com sucesso!");
+                        form.reset();
+                    } else {
+                        alert("Erro ao enviar: " + data.message);
+                    }
+                })
+                .catch(err => {
+                    console.error("Erro ao enviar:", err);
+                    alert("Erro ao enviar o formulário. Veja o console.");
+                });
+        }
+
+        document.getElementById('comprovante').addEventListener('click', function (e) {
+            e.preventDefault();
+            comprovar();
+        });
+
 
     </script>
 
