@@ -22,31 +22,57 @@
 
     }
 
-    .infos,
-    .formulario {
-        max-width: 100%;
+    .formulario textarea {
         width: 100%;
+        /* ocupa toda a largura disponível do container */
+        max-width: 100%;
+        /* evita que ultrapasse o container */
+        box-sizing: border-box;
+        /* inclui padding e borda na largura */
     }
+}
 
-    /* aqui faz os <p> da infos ficarem lado a lado */
-    .infos {
-        display: flex;
-        flex-wrap: wrap;
-        /* quebra linha se faltar espaço */
-        gap: 8px;
-        flex-direction: row;
-    }
+.pix {
+    background-color: #c24818c0;
+    border: 1px solid #9c350c91;
+    box-shadow: 5px 5px 4px #77270881;
+    border-radius: 24px;
+    padding: 16px;
+    /* aumenta a altura e largura do fundo */
+    width: 100%;
+    /* ocupa a largura do container */
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    /* evita que o texto saia do fundo */
+    transition: transform 0.6s ease;
+}
 
-    .infos p {
-        flex: 1 1 auto;
-        /* ajusta largura automaticamente */
-        text-align: center;
-    }
+.infos,
+.formulario {
+    max-width: 100%;
+    width: 100%;
+}
 
-    footer {
-        margin-top: 20px;
-        padding: 12px;
-    }
+/* aqui faz os <p> da infos ficarem lado a lado */
+.infos {
+    display: flex;
+    flex-wrap: wrap;
+    /* quebra linha se faltar espaço */
+    gap: 8px;
+    flex-direction: row;
+}
+
+.infos p {
+    flex: 1 1 auto;
+    /* ajusta largura automaticamente */
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 12px;
+}
 }
 
 /* TABLETS */
