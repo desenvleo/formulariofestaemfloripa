@@ -8,16 +8,36 @@
     .container {
         display: flex;
         flex-direction: column;
+        /* força ficar em coluna */
         max-width: 95%;
         gap: 15px;
-        align-items: center;
+        align-items: stretch;
+        /* sections vão expandir a largura toda */
         height: auto;
-        /* garante que o gradiente cubra tudo */
+        background-image: linear-gradient(to bottom, #e2a085, #ee6825, #9c350c);
+        /* cobre tudo */
+        background-size: cover;
+        /* garante que pegue toda a altura */
+        background-repeat: no-repeat;
     }
 
     .infos,
     .formulario {
         max-width: 100%;
+    }
+
+    /* aqui faz os <p> da infos ficarem lado a lado */
+    .infos {
+        display: flex;
+        flex-wrap: wrap;
+        /* quebra linha se faltar espaço */
+        gap: 8px;
+    }
+
+    .infos p {
+        flex: 1 1 auto;
+        /* ajusta largura automaticamente */
+        text-align: center;
     }
 
     footer {
