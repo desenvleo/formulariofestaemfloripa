@@ -28,6 +28,7 @@
     .formulario {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         /* todos os elementos em coluna */
         width: 100%;
         max-width: 100%;
